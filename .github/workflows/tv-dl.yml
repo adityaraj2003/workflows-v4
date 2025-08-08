@@ -1,0 +1,36 @@
+name: TV-DL
+
+on:
+  push:
+    paths:
+      - 'scripts/tv-dl/main.txt'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo content
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'
+
+      - name: Install ffmpeg via apt
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Install Python packages
+        run: pip install pydrive2 requests
+
+      - name: Decrypt scripts
+        run: python decrypt.py --folder ./scripts/tv-dl
+        env:
+          DECRYPT_KEY: ${{ secrets.DECRYPT_KEY }}
+
+      - name: Execute Python script
+        working-directory: ./scripts/tv-dl
+        run: python main.py
