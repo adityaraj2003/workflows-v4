@@ -1,0 +1,18 @@
+[
+  {
+    "old": "client_secrets.txt",
+    "new": "client_secrets.json"
+  },
+  {
+    "old": "main.txt",
+    "new": "main.py"
+  },
+  {
+    "old": "session.txt",
+    "new": "session.txt"
+  },
+  {
+    "old": "session_conan76",
+    "new": "session_conan76"
+  }
+]
