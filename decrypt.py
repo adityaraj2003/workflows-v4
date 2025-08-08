@@ -39,7 +39,7 @@ def decrypt(encrypted, key):
 
 
 def decrypt_file(filepath, key):
-    with open(filepath, 'rb') as f:
+    with open(filepath, 'r', encoding='utf-8') as f:
         encrypted_data = f.read()
     return decrypt(encrypted_data, key)
 
