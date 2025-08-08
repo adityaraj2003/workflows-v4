@@ -67,7 +67,7 @@ def main():
 
         decrypted_data = decrypt_file(old_path, key.encode())
         with open(new_path, 'wb') as f:
-            f.write(decrypted_data)
+            f.write(decrypted_data.encode('utf-8'))
 
 if __name__ == '__main__':
     main()
