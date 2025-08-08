@@ -65,7 +65,7 @@ def main():
         old_path = os.path.join(folder, old)
         new_path = os.path.join(folder, new)
 
-        decrypted_data = decrypt_file(old_path, key.encode())
+        decrypted_data = decrypt_file(old_path, key)
         with open(new_path, 'wb') as f:
             f.write(decrypted_data.encode('utf-8'))
 
