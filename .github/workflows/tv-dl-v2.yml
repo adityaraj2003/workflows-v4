@@ -1,4 +1,4 @@
-name: TV-DL
+name: TV-DL v2
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
 
       - name: Install Node.js packages
         working-directory: ./scripts/tv-dl
-        run: npm install axios uuid telegram
+        run: npm install axios uuid grammy
 
       - name: Decrypt scripts
         run: python decrypt.py --folder ./scripts/tv-dl
