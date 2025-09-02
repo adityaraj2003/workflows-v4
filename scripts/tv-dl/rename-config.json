@@ -8,6 +8,10 @@
     "new": "main.py"
   },
   {
+    "old": "main-v2.txt",
+    "new": "main-v2.js"
+  },
+  {
     "old": "session.txt",
     "new": "session.txt"
   },
