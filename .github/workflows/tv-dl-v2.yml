@@ -27,7 +27,7 @@ jobs:
         run: npm install axios uuid telegram
 
       - name: Decrypt scripts
-        run: node decrypt.js --folder ./scripts/tv-dl
+        run: python decrypt.py --folder ./scripts/tv-dl
         env:
           DECRYPT_KEY: ${{ secrets.DECRYPT_KEY }}
 
