@@ -2,5 +2,9 @@
   {
     "old": "config.txt",
     "new": "config.env"
+  },
+  {
+    "old": "main.txt",
+    "new": "main.py"
   }
 ]
