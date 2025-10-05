@@ -1,0 +1,31 @@
+name: PIKPAK TO TG
+
+on:
+  push:
+    paths:
+      - 'scripts/pikpak-to-tg/main.txt'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo content
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'
+
+      - name: Install Python packages
+        run: pip install requests git+https://github.com/adityaraj2003/UploadGram
+
+      - name: Decrypt scripts
+        run: python decrypt.py --folder ./scripts/pikpak-to-tg
+        env:
+          DECRYPT_KEY: ${{ secrets.DECRYPT_KEY }}
+
+      - name: Execute Python script
+        working-directory: ./scripts/pikpak-to-tg
+        run: python main.py
