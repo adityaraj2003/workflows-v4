@@ -1,0 +1,6 @@
+[
+  {
+    "old": "config.txt",
+    "new": "config.env"
+  }
+]
